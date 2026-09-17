@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MoneyTrack - Catatan Keuangan</title>
+
+    <link rel="stylesheet" href="porto.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header class="header">
+            <div>
+                <p class="label">PERSONAL FINANCE</p>
+                <h1>Money<span>Track</span></h1>
+                <p class="subtitle">
+                    Kelola pemasukan dan pengeluaranmu dengan mudah.
+                </p>
+            </div>
+
+            <div class="date" id="currentDate"></div>
+        </header>
+
+
+        <!-- SUMMARY -->
+        <section class="summary">
+
+            <div class="summary-card balance-card">
+                <div class="summary-top">
+                    <span>Saldo Saat Ini</span>
+                    <div class="icon">Rp</div>
+                </div>
+
+                <h2 id="balance">Rp 0</h2>
+
+                <p class="summary-info">
+                    Saldo keseluruhan
+                </p>
+            </div>
+
+
+            <div class="summary-card">
+                <div class="summary-top">
+                    <span>Pemasukan</span>
+                    <div class="icon income-icon">↑</div>
+                </div>
+
+                <h2 id="income">Rp 0</h2>
+
+                <p class="summary-info">
+                    Total pemasukan
+                </p>
+            </div>
+
+
+            <div class="summary-card">
+                <div class="summary-top">
+                    <span>Pengeluaran</span>
+                    <div class="icon expense-icon">↓</div>
+                </div>
+
+                <h2 id="expense">Rp 0</h2>
+
+                <p class="summary-info">
+                    Total pengeluaran
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- CONTENT -->
+        <main class="main-content">
+
+            <!-- FORM -->
+            <section class="panel form-panel">
+
+                <div class="panel-header">
+                    <div>
+                        <p class="label">TRANSACTION</p>
+                        <h2>Tambah Transaksi</h2>
+                    </div>
+                </div>
+
+
+                <form id="transactionForm">
+
+                    <div class="input-group">
+                        <label>Jenis Transaksi</label>
+
+                        <div class="type-buttons">
+
+                            <label class="type-btn income-btn">
+                                <input
+                                    type="radio"
+                                    name="type"
+                                    value="income"
+                                    checked
+                                >
+                                <span>↑ Pemasukan</span>
+                            </label>
+
+                            <label class="type-btn expense-btn">
+                                <input
+                                    type="radio"
+                                    name="type"
+                                    value="expense"
+                                >
+                                <span>↓ Pengeluaran</span>
+                            </label>
+
+                        </div>
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="description">
+                            Keterangan
+                        </label>
+
+                        <input
+                            type="text"
+                            id="description"
+                            placeholder="Contoh: Uang saku"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="amount">
+                            Jumlah
+                        </label>
+
+                        <div class="amount-input">
+                            <span>Rp</span>
+
+                            <input
+                                type="number"
+                                id="amount"
+                                placeholder="0"
+                                min="1"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="date">
+                            Tanggal
+                        </label>
+
+                        <input
+                            type="date"
+                            id="date"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="add-btn"
+                    >
+                        + Tambahkan Transaksi
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <!-- HISTORY -->
+            <section class="panel history-panel">
+
+                <div class="history-header">
+
+                    <div>
+                        <p class="label">HISTORY</p>
+                        <h2>Riwayat Transaksi</h2>
+                    </div>
+
+                    <select id="filter">
+
+                        <option value="all">
+                            Semua
+                        </option>
+
+                        <option value="income">
+                            Pemasukan
+                        </option>
+
+                        <option value="expense">
+                            Pengeluaran
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div id="transactionList">
+
+                    <div class="empty">
+
+                        <div class="empty-icon">
+                            ₋
+                        </div>
+
+                        <h3>Belum ada transaksi</h3>
+
+                        <p>
+                            Transaksi yang kamu tambahkan
+                            akan muncul di sini.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer>
+            <p>
+                MoneyTrack © 2026
+            </p>
+        </footer>
+
+    </div>
+
+
+    <script src="porto.js"></script>
+  <link rel="stylesheet" href="porto.css">
+<script src="porto.js"></script>
+
+</body>
+</html>
